@@ -1,6 +1,6 @@
 import { CalcService } from "../../service/CalcService";
 import "./index.css";
-import { useEffect } from "react";
+
 
 export function Home() {
   const { handleOperator, handleNumber, screenValue } = CalcService();
