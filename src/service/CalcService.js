@@ -3,14 +3,18 @@ export function CalcService() {
   const [screenValue, setScreenValue] = useState("");
   const [number, setNumber] = useState("");
   const [actualOperator, setActualOperator] = useState("");
-  const [firstNumber, setFirstNumber] = useState(0.0);
+  const [firstNumber, setFirstNumber] = useState(0);
 
   const result = (value) => {
     switch (value) {
       case "+":
-        console.log("jestem w dodawanie");
-        setFirstNumber((firstNumber + parseFloat(number)).toPrecision(8));
-        setScreenValue((firstNumber + parseFloat(number)).toPrecision(8));
+        setScreenValue(
+          (parseFloat(firstNumber) + parseFloat(number)).toPrecision(8)
+        );
+        setFirstNumber(
+          (parseFloat(firstNumber) + parseFloat(number)).toPrecision(8)
+        );
+
         setNumber("");
         break;
 
@@ -22,7 +26,7 @@ export function CalcService() {
 
       case "/":
         const secondNumber = parseFloat(number).toPrecision(8);
-        if (secondNumber !== 0.0.toPrecision(8)) {
+        if (secondNumber !== (0.0).toPrecision(8)) {
           setScreenValue((firstNumber / secondNumber).toPrecision(8));
           setFirstNumber((firstNumber / secondNumber).toPrecision(8));
         } else {

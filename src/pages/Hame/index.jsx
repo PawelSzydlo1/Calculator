@@ -1,14 +1,13 @@
 import { CalcService } from "../../service/CalcService";
 import "./index.css";
 
-
 export function Home() {
   const { handleOperator, handleNumber, screenValue } = CalcService();
 
   return (
     <div className="container mx-auto my-5">
       <div className="calc">
-        <div className="row">
+        <div className="calc-screen-div row ">
           <input
             type="text"
             className="calc-screen col"
